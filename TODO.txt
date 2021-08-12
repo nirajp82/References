@@ -48,3 +48,4 @@ public async Task<int> B()
 }
 in case of A remaning code after await will be executed by original context, in order to do that it may be queueed to the current SynchronizationContext or TaskScheduler.
 whereas in B it won’t and will likely just invoke the remainder of the method synchronously as part of DoWork’s completion.
+ if DoWork throws an exception, in A/B that exception will end up being stored into the returned Task
