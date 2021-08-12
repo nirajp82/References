@@ -32,6 +32,11 @@ The continuation for GetJsonAsync is now ready to run, and it waits for the cont
 Deadlock. The top-level method is blocking the context thread, waiting for GetJsonAsync to complete, and GetJsonAsync is waiting for the context to be free so it can complete.
 
 --------------------------
+
+– if you’re writing app-level code, do not use ConfigureAwait(false)
+– if you’re writing general-purpose library code, use ConfigureAwait(false)
+
+
 public async Task<int> DoWork() => { ... }
 
 public async Task<int> A()
