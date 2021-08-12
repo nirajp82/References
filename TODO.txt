@@ -1,0 +1,50 @@
+https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html
+// My "library" method.
+public static async Task<JObject> GetJsonAsync(Uri uri)
+{
+  // (real-world code shouldn't use HttpClient in a using block; this is just example code)
+  using (var client = new HttpClient())
+  {
+    var jsonString = await client.GetStringAsync(uri);
+    return JObject.Parse(jsonString);
+  }
+}
+
+// My "top-level" method.
+public class MyController : ApiController
+{
+  public string Get()
+  {
+    var jsonTask = GetJsonAsync(...);
+    return jsonTask.Result.ToString();
+  }
+}
+
+So this is what happens, starting with the top-level method (Button1_Click for UI / MyController.Get for ASP.NET):
+
+The top-level method calls GetJsonAsync (within the UI/ASP.NET context).
+GetJsonAsync starts the REST request by calling HttpClient.GetStringAsync (still within the context).
+GetStringAsync returns an uncompleted Task, indicating the REST request is not complete.
+GetJsonAsync awaits the Task returned by GetStringAsync. The context is captured and will be used to continue running the GetJsonAsync method later. GetJsonAsync returns an uncompleted Task, indicating that the GetJsonAsync method is not complete.
+The top-level method synchronously blocks on the Task returned by GetJsonAsync. This blocks the context thread.
+… Eventually, the REST request will complete. This completes the Task that was returned by GetStringAsync.
+The continuation for GetJsonAsync is now ready to run, and it waits for the context to be available so it can execute in the context.
+Deadlock. The top-level method is blocking the context thread, waiting for GetJsonAsync to complete, and GetJsonAsync is waiting for the context to be free so it can complete.
+
+--------------------------
+public async Task<int> DoWork() => { ... }
+
+public async Task<int> A()
+{
+    // ...
+    var result = await DoWork();
+    return result;
+}
+public async Task<int> B()
+{
+    // ...
+    var result = await DoWork().ConfigureAwait(false);
+    return result;
+}
+in case of A remaning code after await will be executed by original context, in order to do that it may be queueed to the current SynchronizationContext or TaskScheduler.
+whereas in B it won’t and will likely just invoke the remainder of the method synchronously as part of DoWork’s completion.
