@@ -1,7 +1,6 @@
 # References
 Grokking the Object Oriented Design Interview
-https://akshay-iyangar.github.io/
-
+https://akshay-iyangar.github.io/system-design/
 
 https://aka.ms/usdevconnect 
 Subscribe to the Microsoft.Source newsletter | Microsoft Azure
