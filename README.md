@@ -16,3 +16,6 @@ Learning and Development Services
 
 https://aka.ms/azuretechevents
 Microsoft US Azure Events – US Developer Events
+
+Set up your development environment on Windows
+https://docs.microsoft.com/en-us/windows/dev-environment/
