@@ -10,12 +10,12 @@ https://aka.ms/cloudskilling
 Microsoft | 30 Days to Learn It
 
 
- https://learn.microsoft.com/ 
+https://learn.microsoft.com/ 
 Learning and Development Services
-
 
 https://aka.ms/azuretechevents
 Microsoft US Azure Events – US Developer Events
 
-Set up your development environment on Windows
 https://docs.microsoft.com/en-us/windows/dev-environment/
+Set up your development environment on Windows
+
