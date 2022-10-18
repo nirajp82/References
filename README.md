@@ -19,3 +19,8 @@ Microsoft US Azure Events – US Developer Events
 https://docs.microsoft.com/en-us/windows/dev-environment/
 Set up your development environment on Windows
 
+
+Active Directory: Guide to Terminology, Definitions & Fundamentals!
+https://activedirectorypro.com/glossary/
+https://www.pcwdld.com/active-directory-guide#wbounce-modal
+
