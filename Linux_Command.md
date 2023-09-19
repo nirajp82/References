@@ -4,4 +4,4 @@
     * The first digit (7) represents the owner's permissions, which are set to read (4), write (2), and execute (1). In this case, the owner has full read, write, and execute permissions on my_dir.
     * The second digit (5) represents the group's permissions, which are set to read (4) and execute (1). The group has read and execute permissions but no write permission.
     * The third digit (5) represents the permissions for others (everyone else). Like the group, they have read and execute permissions but no write permission.
-
+* `sudo su ec2user`: switch to the user account named "ec2user" with superuser privileges
