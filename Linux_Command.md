@@ -5,3 +5,9 @@
     * The second digit (5) represents the group's permissions, which are set to read (4) and execute (1). The group has read and execute permissions but no write permission.
     * The third digit (5) represents the permissions for others (everyone else). Like the group, they have read and execute permissions but no write permission.
 * `sudo su ec2user`: switch to the user account named "ec2user" with superuser privileges
+* `cp /etc//util.conf`: The command sudo cp /etc//util.conf . is used to copy the file "util.conf" from the "/etc/" directory to the current directory (denoted by the period "."). The "sudo" command is used to execute this copy operation with superuser or administrative privileges, which may be necessary if the source file has restricted permissions.
+
+
+
+
+
