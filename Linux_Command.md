@@ -1,0 +1,1 @@
+* `scp -r -i "/Users/John.Doe/Documents/auth.pem" ec2user@12.34.56.789:my_dir ~/Downloads/` : This scp command is copying the contents of the "my_dir" directory on the remote server (via SSH using the private key auth.pem) to your local system's "~/Downloads/" directory, and it does so recursively, preserving the directory structure. 
