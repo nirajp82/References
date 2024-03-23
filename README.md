@@ -24,3 +24,4 @@ Active Directory: Guide to Terminology, Definitions & Fundamentals!
 https://activedirectorypro.com/glossary/
 https://www.pcwdld.com/active-directory-guide#wbounce-modal
 
+https://github.com/nirajp82/Tools/
